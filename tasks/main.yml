@@ -1,0 +1,11 @@
+---
+- name: nginx-proxy docker container
+  docker_container:
+    name: "nginx-proxy"
+    image: "jwilder/nginx-proxy:latest"
+    state: started
+    recreate: yes
+    pull: true
+    volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
